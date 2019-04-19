@@ -38,10 +38,13 @@
 		$coffee_mfc = number_format($coffee_rub / $MFC_RUB, 2, '.', ' ');
 		
 		$rates_delta = $coffee_rates['delta_24h']+0;
-		$delta_symb = "up";
+		$delta_symb = "down";
 		if($rates_delta < 0) {
-			$delta_symb = "down";
+			//курс MFC упал, значит цена на кофе в MFC выросла
+			$delta_symb = "up";
 		}
+		$rates_delta = (-1) * $rates_delta; //переводим в изменение цены на кофе
+		
 		return [
 			'coffee_mfc'  => $coffee_mfc,
 			'rates_delta' => $rates_delta,
