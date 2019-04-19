@@ -1,0 +1,79 @@
+.is_overlay{ display: block; width: 100%; height: 100%; }
+#trailer {
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	overflow: hidden;
+}
+
+#trailer > video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto;
+	height: auto;
+}
+
+@media (min-aspect-ratio: 16/9) {
+ #trailer > video { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+ #trailer > video { width: 300%; left: -100%; }
+}
+/* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его: */
+@supports (object-fit: cover) {
+ #trailer > video {
+	 top: 0; left: 0;
+	 width: 100%; height: 100%;
+	 object-fit: cover;
+ }
+}
+
+body {
+	font-family: monospace;
+}
+
+.result {
+	    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    padding: 15px;
+    height: 238px;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    background-color: rgba(0, 0, 0, 0.28);
+    border-radius: 50px;
+}
+
+.delta:before {
+	position: relative;
+	top: 6px;
+	display: inline-block;
+	content: "";
+	width: 24px;
+    height: 24px;
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.delta#up:before {
+	background-image: url(../img/up.png);
+}
+
+.delta#down:before {
+	background-image: url(../img/down.png);
+}
+
+.delta {
+	display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    bottom: 19px;
+}

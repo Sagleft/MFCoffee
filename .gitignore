@@ -1,0 +1,5 @@
+/vendor/**
+/coffee_config.php
+/cache
+/coffee_cache.json
+/www/.htaccess
