@@ -6,7 +6,7 @@
 
 ## API запрос
 ```
-http://mfcoin.su/coffee
+http://mfcoin.su/coffee_api
 ```
 Пример ответа
 {"coffee_mfc":"196.51","rate_delta":-3.18}
